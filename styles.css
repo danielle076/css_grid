@@ -1,1 +1,67 @@
-/*Maak hier jouw CSS!*/
+.container {
+    background-color: hsl(31, 46%, 83%);
+    display: grid;
+    row-gap: 16px;
+    column-gap: 16px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+    grid-template-areas:
+            "a-header"
+            "b-main"
+            "c-right-aside"
+            "d-small-aside"
+            "e-middle-aside"
+            "."
+            "f-footer";
+}
+
+.item {
+    background-color: hsl(31, 28%, 64%);
+    border: 2px solid hsl(31, 28%, 64%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#item-a {
+    grid-area: a-header;
+}
+
+#item-b {
+    grid-area: b-main;
+}
+
+#item-c {
+    grid-area: c-right-aside;
+}
+
+#item-d {
+    grid-area: d-small-aside;
+}
+
+#item-e {
+    grid-area: e-middle-aside;
+}
+
+#item-f {
+    grid-area: f-footer;
+}
+
+@media screen and (min-width: 576px) {
+    /*styling toegepast op GROTER dan mobiel: tablets web en beyond*/
+    .container {
+        background-color: hsl(31, 46%, 83%);
+        display: grid;
+        row-gap: 16px;
+        column-gap: 16px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px 190px 100px auto 50px;
+        grid-template-areas:
+            "a-header c-right-aside c-right-aside"
+            "b-main c-right-aside c-right-aside"
+            "b-main e-middle-aside d-small-aside"
+            "b-main e-middle-aside ."
+            "f-footer f-footer f-footer";
+    }
+}
